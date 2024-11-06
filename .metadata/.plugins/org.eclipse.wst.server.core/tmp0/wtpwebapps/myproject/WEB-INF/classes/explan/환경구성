@@ -1,0 +1,20 @@
+프로젝트 환경 설정 후
+
+1. pom.xml 설정 변경
+2. pom.xol 기본적인 디펜던시 추가
+ - root-config 설정에 관한 DB 관련 아이들 먼저 추가
+ - log 관련 / lombok
+3. web.xml, root.xml, servlet.xml 삭제
+4. java 패키지 구성, webapp 폴더 구성
+5. config 패키지부터 추가
+6. DB 설계
+7. 시작!
+
+[
+1. VO
+2. jsp 구성 (경로) 버튼, a태그
+3. controller
+4. service(interface), service Impl
+5. dao(interface)
+6. mapper(namespace)
+] 

@@ -1,0 +1,5 @@
+package com.ezen.spring.config;
+
+public class WebConfig {
+
+}

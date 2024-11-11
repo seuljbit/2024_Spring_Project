@@ -1,0 +1,9 @@
+package com.ezen.spring.domain;
+
+public class FriendCmtVO {
+	private long id;
+	private String name;
+	private String subName;
+	private String content;
+	private String regDate;
+}

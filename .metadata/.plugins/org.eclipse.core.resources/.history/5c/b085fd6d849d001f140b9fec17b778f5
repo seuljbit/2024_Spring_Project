@@ -1,0 +1,33 @@
+package com.ezen.spring.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+
+import com.ezen.spring.domain.LPVO;
+import com.ezen.spring.service.LPService;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RequiredArgsConstructor
+@RequestMapping("/vinyl/*")
+@Controller
+public class LPController {
+	private final LPService lpService;
+	 
+	 @GetMapping("/sale")
+	 public void sale() {}
+	 
+	 @GetMapping("/sale")
+	 public String sale(Model model) {
+	     List<LPVO> lpAlbums = lpService.getLpList(); // 서비스 호출
+	     model.addAttribute("lpAlbums", lpAlbums); // JSP에 전달할 모델 속성 추가
+	     return "sale"; // "sale.jsp"로 매핑되도록 뷰 이름 반환
+	 }
+
+}

@@ -32,8 +32,8 @@ public class RootConfig {
 		//log4jdbc 드라이버 => DB의 흐름으로 로그로 찍어주는 드라이버.
 		// springdb / springUser / mysql
 		hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		hikariConfig.setJdbcUrl("jdbc:log4jdbc:mysql://localhost:3306/projectdb");
-		hikariConfig.setUsername("springUser");
+		hikariConfig.setJdbcUrl("jdbc:log4jdbc:mysql://localhost:3306/lp_db");
+		hikariConfig.setUsername("lp_user");
 		hikariConfig.setPassword("mysql");
 		
 		// -- 여기서부터 hikari 추가 설정
@@ -57,6 +57,7 @@ public class RootConfig {
 		hikariConfig.addDataSourceProperty("dataSource.useServerPrepStmts", "true");
 		
 		HikariDataSource hikariDataSource = new HikariDataSource(hikariConfig);
+		
 		return hikariDataSource;
 	}
 	
@@ -66,12 +67,10 @@ public class RootConfig {
 		sqlFactoryBean.setDataSource(dataSource());
 		
 		// 내부 src/main/resources의 위치값이 필요
-		sqlFactoryBean.setMapperLocations(
-				applicationContext.getResources("classpath:/mappers/*.xml"));
+		sqlFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mappers/*.xml"));
 		
 		// DB: _ (스네이크 표기법) / java : 카멜표기법  reg_date(스네이크케이스) = regDate(카멜케이스)
-		sqlFactoryBean.setConfigLocation(
-				applicationContext.getResource("classpath:/mybatisConfig.xml"));
+		sqlFactoryBean.setConfigLocation(applicationContext.getResource("classpath:/mybatisConfig.xml"));
 		
 		return sqlFactoryBean.getObject();
 	}

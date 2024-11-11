@@ -1,0 +1,37 @@
+package com.ezen.spring.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.ezen.spring.domain.FriendCmtVO;
+import com.ezen.spring.dao.FriendCmtDAO;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+@RequiredArgsConstructor
+public class FriendCmtServiceImpl implements FriendCmtService {
+	
+	private final FriendCmtDAO fcdao;
+
+	@Override
+	public int insert(FriendCmtVO fvo) {
+		return fc;
+	}
+
+	@Override
+	public List<FriendCmtVO> getList(FriendCmtVO fvo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getTotal(FriendCmtVO fvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

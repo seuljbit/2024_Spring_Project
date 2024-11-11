@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.ezen.spring.dao.FriendCmtDAO">
+	<insert id="insert">
+	    insert into friend_comment (name, sub_name, content)
+	    values (#{name}, #{subName}, #{content})
+	</insert>
+
+	
+	<select id="getList" resultType="com.ezen.spring.domain.FriendCmtVO">
+		select * from friend_comment
+		order by id desc
+	</select>
+	
+	<select id="getTotal" resultType="int">
+	    select count(id) from friend_comment
+	</select>
+</mapper>

@@ -1,0 +1,27 @@
+package com.ezen.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ezen.spring.domain.FriendCmtVO;
+import com.ezen.spring.service.friendCmtService;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@RequestMapping("/main/*")
+@RequiredArgsConstructor
+@Slf4j
+public class friendCmtController {
+	private final friendCmtService fcv;
+	
+	public String insert(FriendCmtVO fvo) {
+		log.info(">>>> insert fvo : {}", fvo);
+		
+		int isOk = fcv.insert(fvo);
+		log.info(">>> insert : {}", isOk > 0 ? "Ok!" : "Fail");
+		
+		return "redirect:/";
+	}
+}

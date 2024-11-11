@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.list-inner {
+    display: flex; /* 자식 요소를 플렉스 아이템으로 만듦 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.board-table {
+	width : 100%;
+	border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    text-align: center;
+}

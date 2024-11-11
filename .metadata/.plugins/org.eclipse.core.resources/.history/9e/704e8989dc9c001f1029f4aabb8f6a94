@@ -1,0 +1,58 @@
+package com.ezen.spring.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ezen.spring.domain.FriendCmtVO;
+import com.ezen.spring.service.FriendCmtService;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@RequestMapping("/home/*")
+@RequiredArgsConstructor
+@Slf4j
+public class FriendCmtController {
+	private final FriendCmtService fcv;
+	
+	@GetMapping("/main")
+	public void main() {}
+
+	
+	@PostMapping("/insert")
+	public String insert(FriendCmtVO fvo) {
+		log.info(">>>> insert fvo : {}", fvo);
+		
+		int isOk = fcv.insert(fvo);
+		log.info(">>> insert : {}", isOk > 0 ? "Ok!" : "Fail");
+		
+		return "redirect:/home/main";
+	}
+	
+	@GetMapping("/list")
+	public String friendCmtList(Model m, FriendCmtVO fvo) {
+	    List<FriendCmtVO> list = fcv.getList(fvo);
+	    int totalCount = fcv.getTotal(fvo);
+
+	    m.addAttribute("fcmtList", list);
+	    m.addAttribute("totalCount", totalCount);
+
+	    log.info(">>>> fcmtList size : {}", list.size());
+	    log.info(">>>> totalCount : {}", totalCount);
+
+	    return "/home/main";
+	}
+	
+//	@GetMapping("/delete")
+//	public String delete(int bno) {
+//		int isOk = bsv.delete(bno);
+//		log.info(">>>> delete > {}", isOk>0? "OK": "Fail");
+//		return "redirect:/board/list";
+//	}
+}

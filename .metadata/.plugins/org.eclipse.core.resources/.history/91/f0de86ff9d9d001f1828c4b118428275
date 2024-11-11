@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezen.spring.dao.LpDAO">
+
+    <select id="getLpList" resultType="com.ezen.spring.domain.LPVO">
+        SELECT lp_id, lp_title, lp_artist, lp_price, lp_image_path 
+        FROM lp_albums 
+        ORDER BY RAND()
+    </select>
+    
+    <select id="getLpById" parameterType="int" resultType="com.ezen.spring.domain.LPVO">
+        SELECT * FROM lp_albums
+        WHERE lp_id = #{lpId}
+    </select>
+    
+    <select id="getByGenres" parameterType="array" resultType="com.ezen.spring.domain.LPVO">
+        SELECT * FROM lp_albums
+        <where>
+            <if test="genres != null and genres.length > 0">
+                lp_genre IN
+                <foreach item="genre" index="index" collection="genres" open="(" separator="," close=")">
+                    #{lpGenre}
+                </foreach>
+            </if>
+        </where>
+        ORDER BY lp_id DESC
+    </select>
+
+</mapper>

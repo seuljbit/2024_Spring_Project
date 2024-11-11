@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- DAOImpl() 없음. => namespace="다오인터페이스명" id="메서드명" -->
+<mapper namespace="com.ezen.spring.dao.diaryDAO">
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.ezen.spring.dao.friendCmtVDAO">
+	<insert id="insert">
+		insert into firend_comment
+		values(#{name}, #{sub_name}, #{content})
+	</insert>
+	
+	<select id="getList" resultType="com.ezen.spring.domain.friendCmtVO">
+		select * from friend_comment
+		order by id desc
+	</select>
+
+
+</mapper>

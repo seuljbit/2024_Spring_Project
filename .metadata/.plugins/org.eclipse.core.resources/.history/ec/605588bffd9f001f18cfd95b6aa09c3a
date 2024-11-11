@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.content .inner {
+    display: flex; /* 자식 요소를 플렉스 아이템으로 만듦 */
+    flex-direction: row; /* 자식을 행으로 배열 */
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+    color:white;
+}

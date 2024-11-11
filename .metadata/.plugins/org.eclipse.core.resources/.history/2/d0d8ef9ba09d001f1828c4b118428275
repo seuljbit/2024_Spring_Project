@@ -1,0 +1,133 @@
+@charset "UTF-8";
+.container {
+    position: relative;
+    min-width: 1200px;
+    min-height: 100vh;
+    padding : 0;
+}
+
+.content > .inner {
+    display: flex; /* 자식 요소를 플렉스 아이템으로 만듦 */
+    flex-direction: row; /* 자식을 행으로 배열 */
+    justify-content: center;
+    align-items: center
+}
+
+.shelf {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1000px;
+    min-height: 160px;
+    border-radius: 2px;
+    margin: 60px 0;
+    position: relative;
+    border-bottom: 10px solid transparent;
+    border-image: linear-gradient(90deg, #4e2a04, #6c360f, #4e2a04) 1;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.6); /* 하단에만 그림자 */
+}
+
+
+.lp-album {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    box-shadow: 1 3px 6px rgba(0, 0, 0, 0.5);
+    padding: 0;
+    margin : 0;
+}
+
+.lp-album img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.lp-album a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.lp-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 10px 0;
+}
+
+.lp-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.lp-artist {
+    font-size: 0.8rem;
+}
+
+.lp-price {
+    font-size: 0.7rem;
+}
+
+.lp-album:hover .lp-text {
+    opacity: 1;
+}
+
+/* 총 선반 길이: 1000px */
+/* 앨범 너비: 150px */
+/* 간격을 균등하게 배분하여 중앙에 정렬 */
+
+/* 선반 길이: 1000px */
+/* 앨범 너비: 150px */
+/* 중앙 정렬을 기준으로 간격을 재조정 */
+
+/* 첫 번째 앨범 위치 조정 */
+.lp-album:first-child {
+    left: 0px; /* 왼쪽 가장자리에서 시작 */
+}
+
+/* 두 번째 앨범 위치 조정 */
+.lp-album:nth-child(2) {
+    transform: translateX(-25%);
+}
+
+/* 세 번째 앨범 위치 조정 */
+.lp-album:nth-child(3) {
+    transform: translateX(-50%);
+}
+
+/* 네 번째 앨범 위치 조정 */
+.lp-album:nth-child(4) {
+    left: 725px; /* 3/4 지점 */
+}
+
+/* 다섯 번째 앨범 위치 조정 */
+.lp-album:last-child {
+    left: 900px; /* 우측 가장자리 */
+    transform: translateX(-100%);
+}
+
+
+
+
+
+.shelf::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.content {
+    width: 100%;
+}

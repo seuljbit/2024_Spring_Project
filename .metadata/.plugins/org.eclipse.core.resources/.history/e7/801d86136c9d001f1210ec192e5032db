@@ -1,0 +1,15 @@
+package com.ezen.spring.dao;
+
+import java.util.List;
+
+import com.ezen.spring.domain.FriendCmtVO;
+
+public interface FriendCmtDAO {
+
+	int insert(FriendCmtVO fvo);
+
+	List<FriendCmtVO> getList(FriendCmtVO fvo);
+	
+	int getTotal(FriendCmtVO fvo);
+
+}

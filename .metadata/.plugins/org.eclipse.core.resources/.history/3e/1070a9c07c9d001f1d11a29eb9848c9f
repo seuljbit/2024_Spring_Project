@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.spring.dao.LpDAO">
+
+    <!-- ResultMap 설정 -->
+    <resultMap id="lpResultMap" type="com.ezen.spring.domain.LPVO">
+        <result property="id" column="lp_id"/>
+        <result property="title" column="lp_title"/>
+        <result property="artist" column="lp_artist"/>
+        <result property="genre" column="lp_genre"/>
+        <result property="price" column="lp_price"/>
+        <result property="description" column="lp_description"/>
+        <result property="tract" column="lp_tract"/>
+        <result property="imagePath" column="lp_image_path"/>
+    </resultMap>
+
+    <!-- Select 쿼리 예시 -->
+    <select id="getLpList" resultMap="lpResultMap">
+        SELECT lp_id, lp_title, lp_artist, lp_genre, lp_price, lp_description, lp_tract, lp_image_path
+        FROM lp_albums
+        ORDER BY lp_id DESC;
+    </select>
+
+</mapper>

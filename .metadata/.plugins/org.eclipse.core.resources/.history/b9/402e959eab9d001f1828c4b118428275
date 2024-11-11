@@ -1,0 +1,5 @@
+package com.ezen.spring.domain;
+
+public class PagingVO {
+
+}

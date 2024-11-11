@@ -1,0 +1,26 @@
+package com.ezen.spring.domain;
+
+public class PagingVO {
+	private int pageNum;
+	private int qty;
+	private String genre;
+	private String keyword;
+	
+	// 첫 리스트 시 기본적으로 설정될 값
+	public PagingVO() {
+		this.pageNum = 1;
+		this.qty = 10;
+	}
+	public PagingVO(int pageNum, int qty) {
+		this.pageNum = pageNum;
+		this.qty = qty;
+	}
+	
+	public int getPageStart() {
+		return (this.pageNum - 1) * this.qty;
+	}
+	
+	public String[] getGenreToArray() {
+		return this.genre == null ? new String[] {} : this.genre.split("");
+	}
+}

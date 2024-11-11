@@ -1,0 +1,13 @@
+package com.ezen.spring.service;
+
+import java.util.List;
+
+import com.ezen.spring.domain.FriendCmtVO;
+
+public interface friendCmtService {
+
+	int insert(FriendCmtVO fvo);
+
+	List<FriendCmtVO> getList(FriendCmtVO fvo);
+
+}

@@ -1,0 +1,21 @@
+package com.ezen.spring.service;
+
+import java.util.List;
+
+import com.ezen.spring.domain.FriendCmtVO;
+
+public class friendCmtServiceImpl implements FriendCmtService {
+
+	@Override
+	public int insert(FriendCmtVO fvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<FriendCmtVO> getList(FriendCmtVO fvo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

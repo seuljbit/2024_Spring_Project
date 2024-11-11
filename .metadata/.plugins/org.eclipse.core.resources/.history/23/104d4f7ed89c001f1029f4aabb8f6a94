@@ -1,0 +1,73 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div class="container">
+	<div class="whole-box">
+		<div class="homepage">
+			<div class="page-left">
+				<div class="taday-area">
+					<span> TODAY <span class='today'>40</span> | TOTAL 1000 </span>
+				</div>
+				<!-- 프로필 영역 추후 추가 예정 -->
+			</div>
+			
+			<div class="page-right">
+				<div class="hompage-title"> <span> 길동님의 미니홈피입니다 </span> </div>
+				
+				<div class="content-box">
+					<div class="main-area">
+						<div class="miniRoom">
+							<div class="area-title"> <span> Mini room </span> </div>
+							<div class="miniroom-img"></div>
+						</div>
+						
+						<div class="friend-comment-area">
+							<div class="area-title"> <span> 일촌평 </span> </div>
+							<form action="/home/insert" method="post" enctype="multipart/form-data">
+								<div class="friendComment-inputArea">
+									<input type="text" name="friendComment" id="friendComment" placeholder="일촌과 나누고 싶은 이야기를 남겨보세요~!">
+									<button type="submit" class="btn friendComment-btn"> 등록 </button>
+								</div>
+							</form>
+							
+							<div class="friend-comment-list">
+								<ul>
+							    	<c:forEach items="${fcmtList}" var="fcv">
+							            <li>
+							                <span class="content">${fcv.content}</span>
+							                (<span class="name">${fcv.name}</span>
+							                <span class="sub-name">${fcv.subName}</span>)
+							                <span class="reg_date">${fcv.reg_date}</span>
+							            </li>
+							    	</c:forEach>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="home-navbar">
+			<ul class="home-navber-ul">
+				<li class="main-nav"> <a href=""> 홈 </a> </li>
+				<li class="main-nav"> <a href=""> 다이어리 </a> </li>
+				<li class="main-nav"> <a href=""> 사진첩 </a> </li>
+				<li class="main-nav"> <a href=""> 방명록 </a> </li>
+				<li class="main-nav"> <a href=""> 설정 </a> </li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+
+</body>
+</html>

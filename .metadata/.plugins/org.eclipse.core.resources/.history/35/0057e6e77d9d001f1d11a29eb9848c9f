@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- DAOImpl() 없음. => namespace="다오인터페이스명" id="메서드명" -->
+<mapper namespace="com.ezen.spring.dao.LpDAO">
+
+	<select id="getLpList" resultType="com.ezen.spring.domain.LPVO">
+	        SELECT lp_title, lp_artist, lp_price, lp_image_path FROM lp_albums order by id desc;
+	</select>
+
+</mapper>

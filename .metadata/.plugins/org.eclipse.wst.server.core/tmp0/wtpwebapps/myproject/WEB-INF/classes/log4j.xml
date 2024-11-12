@@ -18,7 +18,11 @@
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
 		<level value="info" />
+<<<<<<< HEAD
 	</logger>	
+=======
+	</logger>
+>>>>>>> dc3d258 (1. 환경 설정 완료)
 	
 	<logger name="org.springframework.beans">
 		<level value="info" />
@@ -34,7 +38,11 @@
 
 	<!-- Root Logger -->
 	<root>
+<<<<<<< HEAD
 		<priority value="info" />
+=======
+		<priority value="warn" />
+>>>>>>> dc3d258 (1. 환경 설정 완료)
 		<appender-ref ref="console" />
 	</root>
 	

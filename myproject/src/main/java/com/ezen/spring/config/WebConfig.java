@@ -7,7 +7,10 @@ import javax.servlet.ServletRegistration.Dynamic;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc3d258 (1. 환경 설정 완료)
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override

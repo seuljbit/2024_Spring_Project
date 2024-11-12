@@ -1,0 +1,38 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>${lp.lpTitle} - LP Details</title>
+    <link rel="stylesheet" href="<c:url value='/resources/css/detail.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/css/reset.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/css/side.css' />">
+</head>
+<body>
+    <div class="container">
+        <jsp:include page="../layout/header.jsp" />
+        
+        <div class="content">
+	        <h1>${lp.lpTitle}</h1>
+	        <p><strong>Artist:</strong> ${lp.lpArtist}</p>
+	        <p><strong>Genre:</strong> ${lp.lpGenre}</p>
+	        <p><strong>Price:</strong> ${lp.lpPrice}원</p>
+	        <p><strong>Description:</strong> ${lp.lpDescription}</p>
+	        <p><strong>Tracks:</strong> 
+			    <c:forEach var="track" items="${fn:split(lp.lpTract, ' \\d{2}\\. ')}" varStatus="status">
+			        <c:if test="${status.index > 0}">
+			            <br />
+			        </c:if>
+			        ${status.index > 0 ? status.index : ''}. ${track}
+			    </c:forEach>
+			</p>
+
+	        <div>
+	            <img src="<c:url value='${lp.lpImagePath}' />" alt="${lpDetails.lpTitle}" width="300px">
+	        </div>
+        </div>
+    </div>
+    <jsp:include page="../layout/footer.jsp" />
+</body>
+</html>

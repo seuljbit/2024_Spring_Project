@@ -20,6 +20,7 @@
     border-bottom: 10px solid transparent;
     border-image: linear-gradient(90deg, #4e2a04, #6c360f, #4e2a04) 1;
     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.6); /* 하단에만 그림자 */
+    margin-bottom : 2rem;
 }
 
 

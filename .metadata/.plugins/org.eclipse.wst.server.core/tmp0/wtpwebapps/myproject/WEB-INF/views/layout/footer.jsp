@@ -17,11 +17,11 @@
             </a>
         </div>
         <ul>
-		    <li> <a href="/vinyl/sale/search?hip-hop"> <input type="checkbox" id="hiphop" value="hip-hop" class="genre-checkbox"> <label for="hiphop"> HIP-HOP </label> </a> </li>
-		    <li> <a href="/vinyl/sale/search?jazz"> <input type="checkbox" id="jazz" value="jazz" class="genre-checkbox"><label for="jazz"> JAZZ </label></a></li>
-		    <li> <a href="/vinyl/sale/search?rock"> <input type="checkbox" id="rock" value="rock" class="genre-checkbox"><label for="rock"> ROCK </label></a></li>
-		    <li> <a href="/vinyl/sale/search?pop"> <input type="checkbox" id="pop" value="pop" class="genre-checkbox"><label for="pop"> POP </label></a></li>
-		    <li> <a href="/vinyl/sale/search?korean"> <input type="checkbox" id="korean" value="korean" class="genre-checkbox"><label for="korean"> KOREAN </label></a></li>
+		    <li> <a href="/vinyl/sale/search?hip-hop"> <input type="checkbox" id="hiphop" value="hip-hop" class="genre-checkbox"> <label for="hiphop"> <span> HIP-HOP </span> </label> </a> </li>
+		    <li> <a href="/vinyl/sale/search?jazz"> <input type="checkbox" id="jazz" value="jazz" class="genre-checkbox"><label for="jazz"> <span> JAZZ </span> </label></a></li>
+		    <li> <a href="/vinyl/sale/search?rock"> <input type="checkbox" id="rock" value="rock" class="genre-checkbox"><label for="rock"> <span> ROCK </span> </label></a></li>
+		    <li> <a href="/vinyl/sale/search?pop"> <input type="checkbox" id="pop" value="pop" class="genre-checkbox"><label for="pop"> <span> POP </span> </label></a></li>
+		    <li> <a href="/vinyl/sale/search?korean"> <input type="checkbox" id="korean" value="korean" class="genre-checkbox"><label for="korean"> <span> KOREAN </span> </label></a></li>
 		</ul>
     </div>
     

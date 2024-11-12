@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.list-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.list-inner > .board-list {
+	width : 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

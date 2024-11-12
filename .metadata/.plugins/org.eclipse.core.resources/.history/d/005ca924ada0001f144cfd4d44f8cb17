@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.container {
+    width: 100%;
+}
+
+.detail-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+    padding: 0 2rem;
+}
+
+.sale-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* 이미지와 텍스트 사이 간격 */
+    align-items: stretch; /* 자식 요소의 높이를 같게 맞추기 위해 사용 */
+}
+.sale-detail-img-area {
+    top: 130px;
+    min-width : 1200px;
+    height: calc(100vh - 150px);
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+}
+
+.sale-detail-text-area {
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+    gap: 5px;
+}
+
+.sale-detail-img-area,
+.sale-detail-text-area {
+    flex: 1;
+    max-height: 800px; /* 필요에 따라 최대 높이 설정 */
+    overflow-y: auto; /* 내용이 길 경우 스크롤 */
+}

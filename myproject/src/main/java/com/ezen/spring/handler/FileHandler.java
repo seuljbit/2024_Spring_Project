@@ -71,7 +71,7 @@ public class FileHandler {
 					fvo.setFileType(1);  // 이미지 파일만 1
 					// 썸네일 생성
 					File thumbNail = new File(folders, uuidStr + "_th_" + fileName);
-					Thumbnails.of(storeFile).size(100, 100).toFile(thumbNail);
+					Thumbnails.of(storeFile).size(150, 150).toFile(thumbNail);
 				}
 				
 			} catch (Exception e) {
@@ -82,7 +82,7 @@ public class FileHandler {
 			// for문 안에 있어야 함.
 			flist.add(fvo);
 		}
-		
+
 		return flist;
 	}
 	

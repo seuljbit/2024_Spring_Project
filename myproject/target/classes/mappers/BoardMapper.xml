@@ -6,8 +6,8 @@
 <!-- DAOImpl() 없음. => namespace="다오인터페이스명" id="메서드명" -->
 <mapper namespace="com.ezen.spring.dao.BoardDAO">
 	<insert id="insert">
-		insert into board(title, writer, content)
-		values(#{title}, #{writer}, #{content})
+	    INSERT INTO board (title, `group`, writer, content)
+	    VALUES (#{title}, #{group}, #{writer}, #{content})
 	</insert>
 	
 	<select id="getList" resultType="com.ezen.spring.domain.BoardVO">

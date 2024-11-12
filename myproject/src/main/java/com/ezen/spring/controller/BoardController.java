@@ -1,5 +1,6 @@
 package com.ezen.spring.controller;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -83,10 +84,12 @@ public class BoardController {
                 // 썸네일 경로 설정
                 if (bvo.getHasFile() > 0 && bdto.getFlist() != null && !bdto.getFlist().isEmpty()) {
                     FileVO fileVO = bdto.getFlist().get(0); // 첫 번째 파일을 썸네일로 사용
-                    bvo.setThumbnailPath(fileVO.getSaveDir() + "/" + fileVO.getUuid() + "_th_" + fileVO.getFileName());
+                    String saveDir = fileVO.getSaveDir().replace("\\", "/");
+                    bvo.setThumbnailPath("/upload/" + saveDir + "/" + fileVO.getUuid() + "_th_" + fileVO.getFileName());
                 } else {
-                    bvo.setThumbnailPath("/resources/image/lp.png"); // 기본 이미지 경로
+                    bvo.setThumbnailPath("/resources/image/lp.png");
                 }
+
             } catch (Exception e) {
                 log.error("Date parsing error for regDate: {}", bvo.getRegDate(), e);
             }
